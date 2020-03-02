@@ -7,12 +7,12 @@ import { enthusiasm } from './reducers';
 import Hello from './containers/Hello';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { EnthusiasmAction } from './actions';
+import { IncrementEnthusiasm, DecrementEnthusiasm } from './actions';
 
 
 const rootElement = document.getElementById('root')
 
-const store = createStore<StoreState, EnthusiasmAction, any, any>(enthusiasm);
+const store = createStore<StoreState, IncrementEnthusiasm | DecrementEnthusiasm, any, any>(enthusiasm);
 
 ReactDOM.render(
     <Provider store={store}>

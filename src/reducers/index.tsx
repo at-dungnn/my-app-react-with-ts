@@ -1,5 +1,5 @@
 // Handle action and return state by reducers
-import { EnthusiasmAction } from '../actions';
+import { IncrementEnthusiasm, DecrementEnthusiasm } from '../actions';
 import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from '../constants';
 import { StoreState } from '../types';
 
@@ -8,7 +8,7 @@ const initialState: StoreState = {
     enthusiasmLevel: 1
 };
 
-export function enthusiasm(state: StoreState = initialState, action: EnthusiasmAction): StoreState {
+export function enthusiasm(state: StoreState = initialState, action: IncrementEnthusiasm | DecrementEnthusiasm): StoreState {
     switch (action.type) {
         case INCREMENT_ENTHUSIASM:
             return { ...state, enthusiasmLevel: state.enthusiasmLevel + 1 };

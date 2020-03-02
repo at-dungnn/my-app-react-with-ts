@@ -1,22 +1,21 @@
 // Declare action and type of action
-import * as constants from '../constants';
-export interface IncrementEnthusiasm {
-    type : constants.INCREMENT_ENTHUSIASM;
+import {INCREMENT_ENTHUSIASM,DECREMENT_ENTHUSIASM} from '../constants';
+import { Action } from 'redux';
+export interface IncrementEnthusiasm extends Action<INCREMENT_ENTHUSIASM> {
+    type : INCREMENT_ENTHUSIASM;
 }
-export interface DecrementEnthusiasm {
-    type: constants.DECREMENT_ENTHUSIASM;
+export interface DecrementEnthusiasm extends Action<DECREMENT_ENTHUSIASM> {
+    type: DECREMENT_ENTHUSIASM;
 }
-
-export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm;
 
 export function incrementEnthusiasm(): IncrementEnthusiasm{
     return {
-        type: constants.INCREMENT_ENTHUSIASM
+        type: INCREMENT_ENTHUSIASM
     };
 }
 export function decrementEnthusiasm(): DecrementEnthusiasm{
     return {
-        type: constants.DECREMENT_ENTHUSIASM
+        type: DECREMENT_ENTHUSIASM
     };
 }
 // Note : 

@@ -1,6 +1,6 @@
 
 import Hello from '../components/Hello';
-import * as actions from '../actions';
+import { IncrementEnthusiasm, DecrementEnthusiasm, incrementEnthusiasm, decrementEnthusiasm } from '../actions';
 import { StoreState } from '../types';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
@@ -11,10 +11,10 @@ export function mapStateToProps({ enthusiasmLevel, languageName }: StoreState) {
         name: languageName,
     }
 }
-export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>) {
+export function mapDispatchToProps(dispatch: Dispatch<IncrementEnthusiasm | DecrementEnthusiasm>) {
     return {
-        onIncrement: () => dispatch(actions.incrementEnthusiasm()),
-        onDecrement: () => dispatch(actions.decrementEnthusiasm()),
+        onIncrement: () => dispatch(incrementEnthusiasm()),
+        onDecrement: () => dispatch(decrementEnthusiasm()),
     }
 }
 

@@ -1,4 +1,5 @@
-export interface StoreState {
-    languageName: string;
-    enthusiasmLevel: number;
+import { IEnthusiasm } from "../reducers";
+
+export interface IStoreState {
+    enthusiasm: IEnthusiasm
 }

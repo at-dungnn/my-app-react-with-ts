@@ -1,8 +1,9 @@
 import * as React from 'react';
 import './Hello.scss';
+import { IEnthusiasm } from '../reducers';
 export interface Props {
     languageName: string;
-    enthusiasmLevel?: number;
+    enthusiasm: IEnthusiasm;
     onIncrement?: () => void;
     onDecrement?: () => void;
 }
@@ -19,13 +20,13 @@ class Hello extends React.Component<Props> {
     //     this.onDecrement = this.onDecrement.bind(this);
     // }
     render() {
-        const { languageName, enthusiasmLevel, onIncrement, onDecrement } = this.props;
+        const { languageName, enthusiasm, onIncrement, onDecrement } = this.props;
         console.log(this.props);
         debugger;
         return (
             <div className='hello'>
                 <div className='greetings'>
-                    {languageName}{enthusiasmLevel}
+                    {languageName ? languageName : enthusiasm.languageName }{enthusiasm.enthusiasmLevel}
                 </div>
                 <button onClick={onDecrement}> - </button>
                 <button onClick={onIncrement}> + </button>

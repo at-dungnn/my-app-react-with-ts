@@ -1,18 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {combineReducers, applyMiddleware, compose, DeepPartial} from 'redux';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import { StoreState } from './types';
-import { enthusiasm } from './reducers';
+import { IStoreState } from './types';
+import * as reducers from './reducers';
 import Hello from './containers/Hello';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { IncrementEnthusiasm, DecrementEnthusiasm } from './actions';
+import * as middlewares from './middlewares';
 
+interface IWindowReduxDevTool extends Window {
+    __REDUX_DEVTOOLS_EXTENSION__(): DeepPartial<any>;
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;
+  }
+
+declare var window: IWindowReduxDevTool;
 
 const rootElement = document.getElementById('root')
 
-const store = createStore<StoreState, IncrementEnthusiasm | DecrementEnthusiasm, any, any>(enthusiasm);
+const createReducers = combineReducers<IStoreState>(reducers);
+
+const midws = Object.keys(middlewares).map(key => middlewares[key]);
+
+const composeEnhancers =
+  (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})) ||
+  compose;
+
+const store = createStore<IStoreState, any, any, any>(createReducers, composeEnhancers(applyMiddleware(...midws)));
 
 ReactDOM.render(
     <Provider store={store}>

@@ -1,14 +1,13 @@
 
 import Hello from '../components/Hello';
 import { IncrementEnthusiasm, DecrementEnthusiasm, incrementEnthusiasm, decrementEnthusiasm } from '../actions';
-import { StoreState } from '../types';
+import { IStoreState } from '../types';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-export function mapStateToProps({ enthusiasmLevel, languageName }: StoreState) {
+export function mapStateToProps({ enthusiasm }: IStoreState) {
     return {
-        enthusiasmLevel,
-        name: languageName,
+        enthusiasm
     }
 }
 export function mapDispatchToProps(dispatch: Dispatch<IncrementEnthusiasm | DecrementEnthusiasm>) {

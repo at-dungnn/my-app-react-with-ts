@@ -1,20 +1,22 @@
 // Handle action and return state by reducers
 import { EnthusiasmAction } from '../actions';
 import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from '../constants';
+import { StoreState } from '../types';
 
-const initialState: any = {
+const initialState: StoreState = {
     languageName: 'Type Scripts',
     enthusiasmLevel: 1
 };
 
-export function enthusiasm(state = initialState, action: EnthusiasmAction): any {
+export function enthusiasm(state: StoreState = initialState, action: EnthusiasmAction): StoreState {
     switch (action.type) {
         case INCREMENT_ENTHUSIASM:
             return { ...state, enthusiasmLevel: state.enthusiasmLevel + 1 };
         case DECREMENT_ENTHUSIASM:
             return { ...state, enthusiasmLevel: state.enthusiasmLevel - 1 };
+        default:
+            return state;
     }
-    return state;
 }
 
 // Note :

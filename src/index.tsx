@@ -9,7 +9,7 @@ import Hello from './containers/Hello';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import * as middlewares from './middlewares';
-
+import {applicationInit} from './actions/App.action';
 interface IWindowReduxDevTool extends Window {
     __REDUX_DEVTOOLS_EXTENSION__(): DeepPartial<any>;
     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;
@@ -30,6 +30,7 @@ const composeEnhancers =
 
 const store = createStore<IStoreState, any, any, any>(createReducers, composeEnhancers(applyMiddleware(...midws)));
 
+store.dispatch(applicationInit());
 ReactDOM.render(
     <Provider store={store}>
         <Hello languageName='DungNN'/>

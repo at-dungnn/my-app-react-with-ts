@@ -1,7 +1,7 @@
 
-import Hello from '../components/Hello';
+import Hello from '../components/Counter';
 import { IncrementEnthusiasm, DecrementEnthusiasm, incrementEnthusiasm, decrementEnthusiasm } from '../actions';
-import { IStoreState } from '../types';
+import { IStoreState } from '../../../types';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 

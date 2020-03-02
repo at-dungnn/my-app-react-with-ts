@@ -1,6 +1,6 @@
 import * as React from 'react';
-import './Hello.scss';
-import { IEnthusiasm } from '../reducers';
+import './Counter.scss';
+import { IEnthusiasm } from '../types';
 export interface Props {
     languageName: string;
     enthusiasm: IEnthusiasm;

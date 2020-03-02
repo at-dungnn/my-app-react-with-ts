@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Hello from './containers/Hello';
+import Hello from './scenes/enthusiasm/containers/Counter';
 
 function App() {
   return (

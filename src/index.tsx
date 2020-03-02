@@ -5,7 +5,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { IStoreState } from './types';
 import * as reducers from './reducers';
-import Hello from './containers/Hello';
+import Hello from './scenes/enthusiasm/containers/Counter';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import * as middlewares from './middlewares';

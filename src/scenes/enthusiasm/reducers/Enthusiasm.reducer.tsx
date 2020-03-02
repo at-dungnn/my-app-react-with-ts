@@ -1,10 +1,8 @@
 // Handle action and return state by reducers
 import { IncrementEnthusiasm, DecrementEnthusiasm } from '../actions';
 import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from '../constants';
-export interface IEnthusiasm {
-    languageName: string;
-    enthusiasmLevel: number;
-}
+import { IEnthusiasm } from '../types/Enthusiasm.types';
+
 const initialState: IEnthusiasm = {
     languageName: 'Type Scripts',
     enthusiasmLevel: 1

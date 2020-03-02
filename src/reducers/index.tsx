@@ -1,1 +1,1 @@
-export * from './Enthusiasm.reducer'
+export * from '../scenes/enthusiasm/reducers'

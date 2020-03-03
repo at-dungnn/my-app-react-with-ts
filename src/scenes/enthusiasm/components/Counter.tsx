@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './Counter.scss';
 import { IEnthusiasm } from '../types';
+import ExampleUIMaterial from './ExampleUIMaterial';
+
 export interface Props {
     languageName: string;
     enthusiasm: IEnthusiasm;
@@ -21,16 +23,21 @@ class Hello extends React.Component<Props> {
     // }
     render() {
         const { languageName, enthusiasm, onIncrement, onDecrement } = this.props;
-        console.log(this.props);
-        debugger;
+        // console.log(this.props);
+        // debugger;
         return (
             <div className='hello'>
                 <div className='greetings'>
-                    {languageName ? languageName : enthusiasm.languageName }{enthusiasm.enthusiasmLevel}
+                    <h2>{languageName ? languageName : enthusiasm.languageName}{enthusiasm.enthusiasmLevel}</h2>
+                    <button onClick={onDecrement}> - </button>
+                    <button onClick={onIncrement}> + </button>
                 </div>
-                <button onClick={onDecrement}> - </button>
-                <button onClick={onIncrement}> + </button>
+                <div className='exampleUI'>
+                    <h2>Example UI </h2>
+                    <ExampleUIMaterial></ExampleUIMaterial>
+                </div>
             </div>
+
         );
     }
 

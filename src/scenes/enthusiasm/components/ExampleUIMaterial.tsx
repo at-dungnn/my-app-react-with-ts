@@ -3,39 +3,35 @@ import './ExampleUIMaterial.scss';
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
-import { WithStyles, withStyles } from '@material-ui/core';
-import { styles } from '../../../assets/styles/common-styles';
+// import { WithStyles, withStyles } from '@material-ui/core';
+// import { styles } from '../../../assets/styles/common-styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-interface Props extends WithStyles<typeof styles> {
-    children?: React.ReactNode;
-    className?: string;
-}
+// interface Props extends WithStyles<typeof styles> {
+//     children?: React.ReactNode;
+//     className?: string;
+// }
+interface Props {
 
+}
 class ExampleUIMaterial extends React.Component<Props> {
 
     render() {
-        const { classes } = this.props;
+        // const { classes } = this.props;
+
         console.log(this.props);
 
         return (
             <div className='example'>
                 <div className="button-demo">
                     <h4>Input Component Demo</h4>
-                    {/* Override global */}
-                    <Button variant="contained" className="Usonia__Button">Default</Button>
-                    {/* Override separate */}
-                    <Button variant="contained" className={classes.buttonsStyle}>Default</Button>
-
                     {/* Default button */}
                     <Button variant="contained" color="primary">Primary</Button>
                     <Button variant="contained" color="secondary">Secondary</Button>
-                    <Button variant="contained" disabled>Disabled</Button>
-                    <Button variant="contained" color="primary" href="#contained-buttons">Link </Button>
                 </div>
                 <div>
                     <h4>Checkbox</h4>
@@ -48,32 +44,6 @@ class ExampleUIMaterial extends React.Component<Props> {
                         value="secondary"
                         color="primary"
                         inputProps={{ 'aria-label': 'secondary checkbox' }}
-                    />
-                    <Checkbox value="uncontrolled" inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} />
-                    <Checkbox disabled value="disabled" inputProps={{ 'aria-label': 'disabled checkbox' }} />
-                    <Checkbox
-                        disabled
-                        checked
-                        value="disabled checked"
-                        inputProps={{ 'aria-label': 'disabled checked checkbox' }}
-                    />
-                    <Checkbox
-                        defaultChecked
-                        value="indeterminate"
-                        indeterminate
-                        inputProps={{ 'aria-label': 'indeterminate checkbox' }}
-                    />
-                    <Checkbox
-                        defaultChecked
-                        color="default"
-                        value="default"
-                        inputProps={{ 'aria-label': 'checkbox with default color' }}
-                    />
-                    <Checkbox
-                        defaultChecked
-                        size="small"
-                        value="small"
-                        inputProps={{ 'aria-label': 'checkbox with small size' }}
                     />
                 </div>
                 <div>
@@ -100,7 +70,7 @@ class ExampleUIMaterial extends React.Component<Props> {
                             <Typography>Content</Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size="small">Learn More</Button>
+                            <Button variant="contained" color="primary">Primary</Button>
                         </CardActions>
                     </Card>
                 </div>
@@ -108,5 +78,6 @@ class ExampleUIMaterial extends React.Component<Props> {
         );
     }
 }
+export default ExampleUIMaterial;
 
-export default withStyles(styles)(ExampleUIMaterial);
+// export default withStyles(styles)(ExampleUIMaterial);

@@ -13,7 +13,7 @@ export interface Props {
 //     enthusiasmLevel: number;
 //     languageName: string;
 // }
-class Hello extends React.Component<Props> {
+class Counter extends React.Component<Props> {
     // constructor(props: Props) {
     //     super(props);
     //     this.state = { languageName: this.props.languageName, enthusiasmLevel: this.props.enthusiasmLevel || 1 };
@@ -56,4 +56,4 @@ class Hello extends React.Component<Props> {
     // }
 }
 
-export default Hello;
+export default Counter;

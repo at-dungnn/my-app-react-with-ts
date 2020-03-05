@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {combineReducers, applyMiddleware, compose, DeepPartial} from 'redux';
-import './index.css';
+import './index.scss';
 import * as serviceWorker from './serviceWorker';
 import { IStoreState } from './types';
 import * as reducers from './reducers';

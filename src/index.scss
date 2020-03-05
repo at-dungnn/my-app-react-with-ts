@@ -1,0 +1,12 @@
+// Override common CSS for all project
+body {
+    .Usonia__Button {
+        height: 50px;
+        box-shadow: "0 3px 5px 2px rgba(255, 105, 135, .3)";
+        background: transparent linear-gradient(281deg, #3598fe 0%, #0763e0 100%) 0% 0% no-repeat padding-box;
+        opacity: 1;
+        span {
+            color: white;
+        }
+    }
+}

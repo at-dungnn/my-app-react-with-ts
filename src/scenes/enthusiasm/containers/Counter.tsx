@@ -1,5 +1,5 @@
 
-import Hello from '../components/Counter';
+import Counter from '../components/Counter';
 import { IncrementEnthusiasm, DecrementEnthusiasm, incrementEnthusiasm, decrementEnthusiasm } from '../actions';
 import { IStoreState } from '../../../types';
 import { connect } from 'react-redux';
@@ -17,4 +17,4 @@ export function mapDispatchToProps(dispatch: Dispatch<IncrementEnthusiasm | Decr
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hello);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);

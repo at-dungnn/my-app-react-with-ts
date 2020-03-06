@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Hello from './scenes/enthusiasm/containers/Counter';
 
 function App() {

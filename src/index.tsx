@@ -14,6 +14,7 @@ import {
   ThemeProvider,
 } from '@material-ui/core/styles';
 import theme from '../src/assets/theme/custom-theme';
+import Navigation from './componets/layouts/navigation/navigation';
 interface IWindowReduxDevTool extends Window {
   __REDUX_DEVTOOLS_EXTENSION__(): DeepPartial<any>;
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;
@@ -34,10 +35,13 @@ const composeEnhancers =
 
 const store = createStore<IStoreState, any, any, any>(createReducers, composeEnhancers(applyMiddleware(...midws)));
 
+console.log(theme);
+
 store.dispatch(applicationInit());
 ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
+      <Navigation></Navigation>
       <Hello languageName='DungNN' />
     </ThemeProvider>
   </Provider>, rootElement);

@@ -1,7 +1,8 @@
+import { createStyles } from "@material-ui/core";
 
 export const styles = {
     buttonsStyle: {
-        background: 'linear-gradient(281deg, #3598fe 0%, #0763e0 100%) 0% 0%',
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
         borderRadius: 3,
         border: 0,
         color: 'white',

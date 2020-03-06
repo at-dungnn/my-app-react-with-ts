@@ -10,11 +10,14 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import { styles } from '../../../assets/styles/common.styles';
+
 
 // interface Props extends WithStyles<typeof styles> {
 //     children?: React.ReactNode;
 //     className?: string;
 // }
+console.log('button styles', styles);
 interface Props {
 
 }
@@ -32,6 +35,8 @@ class ExampleUIMaterial extends React.Component<Props> {
                     {/* Default button */}
                     <Button variant="contained" color="primary">Primary</Button>
                     <Button variant="contained" color="secondary">Secondary</Button>
+                    {/* Custom styles */}
+                    <Button variant="contained" color="secondary" style={styles.buttonsStyle}>Secondary</Button>
                 </div>
                 <div>
                     <h4>Checkbox</h4>
@@ -50,7 +55,7 @@ class ExampleUIMaterial extends React.Component<Props> {
                     <h4>Text Input</h4>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Grid justify="center">
+                            <Grid container justify="center">
                                 <Grid >
                                     <TextField id="standard-basic" label="Username" />
                                 </Grid>

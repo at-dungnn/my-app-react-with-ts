@@ -33,14 +33,14 @@ const theme = createMuiTheme({
         borderRadius: 8,
     },
     overrides: {
-        MuiDrawer: {
-            paper: {
-                minWidth: 256,
-            },
-            paperAnchorDockedLeft: {
-                borderRight: 'none',
-            },
-        },
+        // MuiDrawer: {
+        //     paper: {
+        //         minWidth: 60,
+        //     },
+        //     paperAnchorDockedLeft: {
+        //         borderRight: 'none',
+        //     },
+        // },
         MuiButton: {
             root: {
                 background: 'linear-gradient(281deg, #3598fe 0%, #0763e0 100%) 0% 0%',
